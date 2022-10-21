@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def uppercase(str):
     for chr in sr:
         if ord(chr) >= ord('a') and ord(chr) <= ord('z'):
