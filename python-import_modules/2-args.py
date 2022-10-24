@@ -2,7 +2,7 @@
 if __name__ == "__main__":
     import sys
     argv = sys.argv[1:]
-    argv_count = leng(argv)
+    argv_count = len(argv)
     index = 1
     if argv_count == 0:
         print("{:d} arguments.".format(argv_count))
