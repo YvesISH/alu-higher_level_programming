@@ -1,1 +1,2 @@
-My_list = __import__('1-my_list').MyList
+importing class from the modul
+>>> My_list = __import__('1-my_list').MyList
