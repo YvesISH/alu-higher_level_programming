@@ -1,4 +1,5 @@
-tatus of request"""
+#!/usr/bin/python3
+"""printing status of request"""
 import sys
 
 
