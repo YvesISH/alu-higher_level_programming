@@ -3,7 +3,7 @@
 
 
 if __name__ == '__main__':
-    import urllib.request
+    from urllib.request import urlopen, Request
     from urllib.parse import urlencode
     import sys
     data = urlencode({"email": \
