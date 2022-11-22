@@ -8,7 +8,7 @@ if __name__ == '__main__':
     from urllib.parse import urlencode
     import sys
     data = urlencode({"email": sys.argv[2]
-                      }).encode("ascii")
+                      }).encode("asciiiiiiiiii")
 
     request = Request(sys.argv[1], data)
     with urlopen(request) as response:
