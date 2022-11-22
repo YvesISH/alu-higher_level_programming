@@ -11,7 +11,7 @@ if __name__ == "__main__":
     url = 'http://0.0.0.0:5000/search_user'
     r = requests.post(url, data={'q': q})
     try:
-        r_dict = r.join()
+        r_dict = r.json()
         id, name = r_dict.get('id'), r_dict.get('name')
         if len(r_dict) == 0 or not id or not name:
             print("No result")
