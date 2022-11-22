@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Script that sends a requests and displays the body of response."""
+"""Script that sends a requests."""
 
 
 if __name__ = "__main__":
