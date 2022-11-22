@@ -12,7 +12,7 @@ def send_request():
             xyz = re.read()
             print(xyz.decode("utf-8"))
     except urllib.error.HTTPError as err:
-        print("Error code: {}".format(e.code))
+        print("Error code: {}".format(err.code))
 
 if __name__ == "__main__":
     send_request()
