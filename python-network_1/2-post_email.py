@@ -4,7 +4,7 @@
 
 if __name__ == '__main__':
     import urllib.request
-    import urllib.parse
+    from urllib.parse import urlencode
     import sys
     data = urlencode({"email": \
             sys.argv[2]}).encode("ascii")
