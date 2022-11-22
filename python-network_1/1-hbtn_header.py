@@ -2,7 +2,7 @@
 """A script that displays the value of the x-request ID."""
 
 
-if __name__== '__main__':
+if __name__ == '__main__':
     from urllib.request import urlopen
     import sys
 
