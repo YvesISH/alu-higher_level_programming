@@ -5,14 +5,14 @@
 def matrix_mul(m_a, m_b):
     """Multiply 2 matrices."""
     if type(m_a) is not list:
-        raise TypeError("m_A must be a list")
+        raise TypeError("m_a must be a list")
     l1 = len(m_a)
     if l1 == 0:
         raise ValueError("m_a can't be empty")
     l2 = None
     for i in m_a:
         if type(i) is not list:
-            raise TypeError("m_a must be a lists of lists")
+            raise TypeError("m_a must be a list of lists")
         if l2 is None:
             l2 = len(i)
             if l2 == 0:
@@ -21,7 +21,7 @@ def matrix_mul(m_a, m_b):
             raise TypeError("each row of m_a must be of the same size")
         for j in i:
             if type(j) is not int and type(j) is not float:
-                raise TypeError("m_a should contain only integers and floats")
+                raise TypeError("m_a should contain only integers or floats")
     if type(m_b) is not list:
         raise TypeError("m_b must be a list")
     if len(m_b) == 0:
