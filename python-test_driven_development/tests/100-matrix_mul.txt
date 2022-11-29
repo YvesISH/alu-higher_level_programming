@@ -1,0 +1,62 @@
+The ``100-matrix_mul`` module
+======================
+
+This is a text file in reStructuredText format to test the above module.
+
+Using ``matrix_mul``
+-------------------
+
+First import ``matrix_mul`` from the ``100-matrix_mul`` module:
+
+    >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+Now use it:
+>>> m_a = [[1, 2], [3, 4]]
+>>> m_b = [[1, 2], [3, 4]]
+
+>>> matrix_mul(m_a, m_b)
+[[7, 10], [15, 22]]
+
+>>> matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+[[13, 16]]
+
+>>> matrix_mul([[1]], [[1]])
+[[1]]
+
+Edge Cases
+==========
+>>> matrix_mul([['3', 1]], [[2, 1]])
+Traceback (most recent call last):
+TypeError: m_a should contain only integers or floats
+
+>>> matrix_mul([[4, 1]], [['5', 3]])
+Traceback (most recent call last):
+TypeError: m_b should contain only integers or floats
+
+>>> matrix_mul([[4, 5, 6], [2, 1]], [[2]])
+Traceback (most recent call last):
+TypeError: each row of m_a must should be of the same size
+
+>>> matrix_mul([[5,3]], [[8,1],[3]])
+Traceback (most recent call last):
+TypeError: each row of m_b must should be of the same size
+
+>>> matrix_mul('string', [])
+Traceback (most recent call last):
+TypeError: m_a must be a list
+
+>>> matrix_mul([[3]], 'string')
+Traceback (most recent call last):
+TypeError: m_b must be a list
+
+>>> matrix_mul([[2]], [])
+Traceback (most recent call last):
+ValueError: m_b can't be empty
+
+>>> matrix_mul([], [[2]])
+Traceback (most recent call last):
+ValueError: m_a can't be empty
+
+>>> matrix_mul([[3,2,1]], [[3],[4]])
+Traceback (most recent call last):
+ValueError: m_a and m_b can't be multiplied
