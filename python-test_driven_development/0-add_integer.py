@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """
-This "0-add_integer" module supplies one function, add_integer(a, b).
+This module supplies one function.
 """
 
 
 def add_integer(a, b):
-    """Return the addition of two numbers."""
+    """The addition of 2 numbers."""
     if type(a) is not int and type(a) is not float:
         raise TypeError("a must be an integer")
     if type(b) is not int and type(b) is not float:
