@@ -1,5 +1,4 @@
-#!/usr/bin/python3
-"""this is a base class."""
+s is a base class."""
 import json
 import csv
 import turtle
@@ -30,15 +29,15 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """SaVe to a file."""
-        fname = cls.__name + ".json"
+        """List of objects"""
+        file_name = cls.__name__ + ".json"
         yy = []
         if list_objs:
-            for mm in list_objs:
-                yy.append(cls.to_dictionary(mm))
+            for i in list_objs:
+                yy.append(cls.to_dictionary(i))
 
-        with open(fname, mode="w") as thefile:
-            thefile.write(cls.to_json_string(yy))
+        with open(file_name, mode="w") as saveme:
+            saveme.write(cls.to_json_string(yy))
 
     @staticmethod
     def from_json_string(json_string):
@@ -64,15 +63,15 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """objects of a file."""
+        """list of objects"""
         try:
-            with open(cls.__name__ + ".json", "r") as nOf:
-                yes = nOf.read()
+            with open(cls.__name__ + ".json", "r") as file:
+                content = file.read()
         except FileNotFoundError:
             return []
 
-        kk = cls.from_json_string(yes)
-        yy = []
-        for xx in kk:
-            yy.append(cls.create(**xx))
-        return yy
+        hi = cls.from_json_string(content)
+        fine = []
+        for hello in hi:
+            fine.append(cls.create(**hello))
+        return fine
