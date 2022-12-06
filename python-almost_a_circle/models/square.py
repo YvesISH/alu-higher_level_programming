@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Create Square class"""
 
-
 from models.rectangle import Rectangle
 
 
@@ -13,17 +12,17 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        """Return the size of the square"""
+        """size of the square"""
         return self.width
 
     @size.setter
     def size(self, value):
-        """Set the size of the square"""
+        """size of the square"""
         self.width = value
         self.height = value
 
     def __str__(self):
-        """Return the string representation of the square"""
+        """string representation"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
 
     def update(self, *args, **kwargs):
@@ -57,5 +56,5 @@ class Square(Rectangle):
                 self.y = kwargs["y"]
 
     def to_dictionary(self):
-	"""Return a dictionary representation of the square"""
+        """dictionary representation"""
         return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
