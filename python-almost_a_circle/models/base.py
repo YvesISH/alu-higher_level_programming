@@ -31,14 +31,14 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """SaVe to a file."""
-        filename = cls.__name + ".json"
+        fname = cls.__name + ".json"
         yy = []
         if list_objs:
-            for i in list_objs:
-                new_list.append(cls.to_dictionary(i))
+            for mm in list_objs:
+                yy.append(cls.to_dictionary(mm))
 
-        with open(file_name, mode="w") as thisFile:
-            thisFile.write(cls.to_json_string(yy))
+        with open(fname, mode="w") as thefile:
+            thefile.write(cls.to_json_string(yy))
 
     @staticmethod
     def from_json_string(json_string):
@@ -66,7 +66,7 @@ class Base:
     def load_from_file(cls):
         """objects of a file."""
         try:
-            with open(cls.__name__ + "json", "r") as nOf:
+            with open(cls.__name__ + ".json", "r") as nOf:
                 yes = nOf.read()
         except FileNotFoundError:
             return []
