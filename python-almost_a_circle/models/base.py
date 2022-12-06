@@ -71,8 +71,8 @@ class Base:
         except FileNotFoundError:
             return []
 
-        Ano-File = cls.from_json_string(yes)
+        kk = cls.from_json_string(yes)
         yy = []
-        for xx in Ano-File:
+        for xx in kk:
             yy.append(cls.create(**xx))
         return yy
