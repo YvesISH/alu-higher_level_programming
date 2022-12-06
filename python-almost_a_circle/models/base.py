@@ -67,11 +67,11 @@ class Base:
         """objects of a file."""
         try:
             with open(cls.__name__ + "json", "r") as nOf:
-                yvesss = nOf.read()
+                yes = nOf.read()
         except FileNotFoundError:
             return []
 
-        Ano-File = cls.from_json_string(yvesss)
+        Ano-File = cls.from_json_string(yes)
         yy = []
         for xx in Ano-File:
             yy.append(cls.create(**xx))
