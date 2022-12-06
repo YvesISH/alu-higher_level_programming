@@ -33,11 +33,12 @@ class Base:
         """SaVe to a file."""
         filename = cls.__name + ".json"
         yy = []
-        if list_objs is not None:
-            for xx in list_objs:
-                yy.append(cls.to_dictionary(xx))
-        with open(filename, 'w') as f:
-            f.write(cls.to_json_string(yy))
+        if list_objs:
+            for i in list_objs:
+                new_list.append(cls.to_dictionary(i))
+
+        with open(file_name, mode="w") as thisFile:
+            thisFile.write(cls.to_json_string(yy))
 
     @staticmethod
     def from_json_string(json_string):
@@ -50,3 +51,28 @@ class Base:
 
         json_list = json.loads(json_string)
         return json_list
+
+    @classmethod
+    def create(cls, **dictionary):
+        """CReatiNG oBJectS."""
+        if cls.__name__ == "Rectangle":
+            yves = cls(3, 2)
+        if cls.__name__ == "Square":
+            yves = cls(3)
+        yves.update(**dictionary)
+        return yves
+
+    @classmethod
+    def load_from_file(cls):
+        """objects of a file."""
+        try:
+            with open(cls.__name__ + "json", "r") as nOf:
+                yvesss = nOf.read()
+        except FileNotFoundError:
+            return []
+
+        Ano-File = cls.from_json_string(yvesss)
+        yy = []
+        for xx in Ano-File:
+            yy.append(cls.create(**xx))
+        return yy
