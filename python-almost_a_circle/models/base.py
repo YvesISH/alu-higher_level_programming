@@ -1,4 +1,5 @@
-s is a base class."""
+#!/usr/bin/python3
+"""base class."""
 import json
 import csv
 import turtle
