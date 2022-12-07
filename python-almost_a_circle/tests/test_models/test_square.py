@@ -1,19 +1,7 @@
 #!/usr/bin/python3
-"""Defines unittests for models/square.py.
-Unittest classes:
-    TestSquare_instantiation - line 24
-    TestSquare_size - line 88
-    TestSquare_x - line 166
-    TestSquare_y - line 238
-    TestSquare_order_of_initialization - line 306
-    TestSquare_area - line 322
-    TestSquare_stdout - line 343
-    TestSquare_update_args - line 426
-    TestSquare_update_kwargs - line 538
-    TestSquare_to_dictionary - 640
+"""Defines unittests for models/square.py
 """
 import io
-import json
 import sys
 import unittest
 from models.base import Base
@@ -379,12 +367,12 @@ class TestSquare_stdout(unittest.TestCase):
         s = Square(2, 88, 4, 19)
         self.assertEqual("[Square] (19) 88/4 - 2", str(s))
 
-    # def test_str_method_changed_attributes(self):
-    #     s = Square(7, 0, 0, [4])
-    #     s.size = 15
-    #     s.x = 8
-    #     s.y = 10
-    #     self.assertEqual("[Square] ([4]) 8/10 - 15", str(s))
+    def test_str_method_changed_attributes(self):
+        s = Square(7, 0, 0, [4])
+        s.size = 15
+        s.x = 8
+        s.y = 10
+        self.assertEqual("[Square] ([4]) 8/10 - 15", str(s))
 
     def test_str_method_one_arg(self):
         s = Square(1, 2, 3, 4)
@@ -463,17 +451,17 @@ class TestSquare_update_args(unittest.TestCase):
         s.update(89, 2)
         self.assertEqual(2, s.height)
 
-    # def test_update_args_None_id(self):
-    #     s = Square(10, 10, 10, 10)
-    #     s.update(None)
-    #     correct = "[Square] ({}) 10/10 - 10".format(s.id)
-    #     self.assertEqual(correct, str(s))
+    def test_update_args_None_id(self):
+        s = Square(10, 10, 10, 10)
+        s.update(None)
+        correct = "[Square] ({}) 10/10 - 10".format(s.id)
+        self.assertEqual(correct, str(s))
 
-    # def test_update_args_None_id_and_more(self):
-    #     s = Square(10, 10, 10, 10)
-    #     s.update(None, 4, 5)
-    #     correct = "[Square] ({}) 5/10 - 4".format(s.id)
-    #     self.assertEqual(correct, str(s))
+    def test_update_args_None_id_and_more(self):
+        s = Square(10, 10, 10, 10)
+        s.update(None, 4, 5)
+        correct = "[Square] ({}) 5/10 - 4".format(s.id)
+        self.assertEqual(correct, str(s))
 
     def test_update_args_twice(self):
         s = Square(10, 10, 10, 10)
@@ -565,17 +553,17 @@ class TestSquare_update_kwargs(unittest.TestCase):
         s.update(id=89, size=9)
         self.assertEqual(9, s.height)
 
-    # def test_update_kwargs_None_id(self):
-    #     s = Square(10, 10, 10, 10)
-    #     s.update(id=None)
-    #     correct = "[Square] ({}) 10/10 - 10".format(s.id)
-    #     self.assertEqual(correct, str(s))
+    def test_update_kwargs_None_id(self):
+        s = Square(10, 10, 10, 10)
+        s.update(id=None)
+        correct = "[Square] ({}) 10/10 - 10".format(s.id)
+        self.assertEqual(correct, str(s))
 
-    # def test_update_kwargs_None_id_and_more(self):
-    #     s = Square(10, 10, 10, 10)
-    #     s.update(id=None, size=7, x=18)
-    #     correct = "[Square] ({}) 18/10 - 7".format(s.id)
-    #     self.assertEqual(correct, str(s))
+    def test_update_kwargs_None_id_and_more(self):
+        s = Square(10, 10, 10, 10)
+        s.update(id=None, size=7, x=18)
+        correct = "[Square] (None) 18/10 - 7"
+        self.assertEqual(correct, str(s))
 
     def test_update_kwargs_twice(self):
         s = Square(10, 10, 10, 10)
@@ -652,28 +640,6 @@ class TestSquare_to_dictionary(unittest.TestCase):
         s = Square(10, 10, 10, 10)
         with self.assertRaises(TypeError):
             s.to_dictionary(1)
-
-    def test_save_to_file(self):
-        """test regular use of save_to_file"""
-        r1 = Square(9, 1, 1, 1)
-        r2 = Square(4, 2, 2, 2)
-        squares = [r1, r2]
-        Square.save_to_file(squares)
-        with open("Square.json", "r") as f:
-            ls = [r1.to_dictionary(), r2.to_dictionary()]
-            self.assertEqual(json.dumps(ls), f.read())
-
-    def test_stf_empty(self):
-        """test save_to_file with empty list"""
-        Square.save_to_file([])
-        with open("Square.json", "r") as f:
-            self.assertEqual("[]", f.read())
-
-    def test_stf_None(self):
-        """test save_to_file with None"""
-        Square.save_to_file(None)
-        with open("Square.json", "r") as f:
-            self.assertEqual("[]", f.read())
 
 
 if __name__ == "__main__":
