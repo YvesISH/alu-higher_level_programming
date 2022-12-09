@@ -13,7 +13,7 @@ if __name__ == "__main__":
             id ASC".format(argv[4]))
     mylist = cursor.fetchall()
     for i in mylist:
-        if i[4] == argv[4]:
+        if i[1] == argv[4]:
             print(i)
     cursor.close()
     db.close()
