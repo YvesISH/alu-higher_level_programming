@@ -2,7 +2,7 @@
 """Script that takes in arguments."""
 
 
-import sys
+from sys import argv
 import MySQLdb
 
 if __name__ == "__main__":
