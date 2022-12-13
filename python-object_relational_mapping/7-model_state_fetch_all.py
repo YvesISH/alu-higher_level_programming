@@ -15,7 +15,7 @@ if __name__ == "__main__":
                                                                     argv[3]))
     Base.metadata.create_all(eng)
     Session = sessionmaker(bind=eng)
-    Ishimwe = Session()
-    for state in Ishimwe.query(State).order_by(State.id):
+    session = Session()
+    for state in session.query(State).order_by(State.id):
         print("{}: {}".format(state.id, state.name))
     session.close()
