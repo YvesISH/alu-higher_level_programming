@@ -5,8 +5,8 @@ const secondBiggest = () => {
     console.log(0);
     return;
   }
-  const max = Number.MIN_SAFE_INTEGER;
-  const secondMax = Number.MIN_SAFE_INTEGER;
+  let max = Number.MIN_SAFE_INTEGER;
+  let secondMax = Number.MIN_SAFE_INTEGER;
   for (let i = 0; i < args.length; i++) {
     if (Number(args[i]) > max) {
       secondMax = max;
@@ -17,3 +17,4 @@ const secondBiggest = () => {
   }
   console.log(secondMax);
 };
+secondBiggest();
