@@ -14,7 +14,7 @@ const Rectangle = class Rectangle {
         prints = prints + 'X';
       }
       console.log(prints);
-      print = '';
+      prints = '';
     }
   }
 
