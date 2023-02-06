@@ -1,8 +1,8 @@
 #!/usr/bin/node
-const require = require('require');
+const requ = require('request');
 const apiUrl = process.argv.slice(2)[0];
 
-require(apiUrl, (error, response, body) => {
+requ(apiUrl, (error, response, body) => {
   if (error) {
     console.log(error);
     return;
