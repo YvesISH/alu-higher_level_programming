@@ -12,8 +12,8 @@ request(url, (err, response, body) => {
     results.forEach(result => {
       result.characters.forEach(characterUrl => {
         if (characterUrl.includes('18')) {
-        i++;
-	}
+          i++;
+	  }
       });
     });
     console.log(i);
