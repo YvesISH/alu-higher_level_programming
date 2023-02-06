@@ -13,12 +13,13 @@ requ(apiUrl, (error, response, body) => {
 
   todos.forEach(todo => {
     if (todo.completed) {
-      if (taskCompletedByUser[todo.userId]) {
+      if (taskCompletedByUser[todo.userId] === undefined) {
         taskCompletedByUser[todo.userId] = 1;
+      } else {
+        result[item.userId] += 1;
       }
     }
   });
-  object.entries(taskCompletedByUser).forEach(([userId, count]) => {
-    console.log(`user Id: ${userId}, Tasks completed: ${count}`);
-  });
+  console.log(taskCompletedByUser);
+  };
 });
