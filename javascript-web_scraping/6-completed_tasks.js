@@ -16,9 +16,9 @@ requ(apiUrl, (error, response, body) => {
       if (taskCompletedByUser[todo.userId] === undefined) {
         taskCompletedByUser[todo.userId] = 1;
       } else {
-        result[item.userId] += 1;
+        taskCompletedByUser[todo.userId] += 1;
       }
     }
   });
   console.log(taskCompletedByUser);
-  });
+});
