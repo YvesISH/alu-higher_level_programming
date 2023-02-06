@@ -21,5 +21,5 @@ requ(apiUrl, (error, response, body) => {
     }
   });
   console.log(taskCompletedByUser);
-  };
+  }
 });
