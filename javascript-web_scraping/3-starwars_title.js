@@ -1,8 +1,8 @@
 #!/usr/bin/node
-const file = process.argv.slice(2);
+const args = process.argv.slice(2);
 const request = require('request');
 
-const url = `https://swapi-api.htbn.io/api/films/${file[0]}`;
+const url = `https://swapi-api.htbn.io/api/films/${args[0]}`;
 
 request(url, (err, response, body) => {
   if (err) {
