@@ -9,14 +9,14 @@ request(filmsUrl, (error, response, body) => {
     console.log(error);
   } else {
     const parseData = JSON.parse(body);
-    const characters = parsedData.characters;
+    const characters = parseData.characters;
     characters.forEach(charUrl => {
       request(charUrl, (err, response, body) => {
         if (err) console.log(err);
 	else {
-          const parseCharData = JSON.parse(body);
+            const parseCharData = JSON.parse(body);
           console.log(parseCharData.name);
-	}
+	  }
       });
     });
   }
