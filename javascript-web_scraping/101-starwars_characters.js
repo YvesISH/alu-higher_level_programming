@@ -23,7 +23,7 @@ request(filmsUrl, (error, response, body) => {
     console.log(error);
   } else {
     const parseData = JSON.parse(body);
-    const characters = ParseData.characters;
+    const characters = parseData.characters;
     printCharacterName(characters, 0);
   }
 });
