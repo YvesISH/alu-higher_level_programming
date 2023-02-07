@@ -13,8 +13,8 @@ request(filmsUrl, (error, response, body) => {
     characters.forEach(charUrl => {
       request(charUrl, (err, response, body) => {
         if (err) console.log(err);
-	else {
-          const parseCharData = JSON.parse(body);
+	  else {
+            const parseCharData = JSON.parse(body);
             console.log(parseCharData.name);
 	  }
       });
