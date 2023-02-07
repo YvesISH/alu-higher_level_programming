@@ -14,8 +14,8 @@ request(filmsUrl, (error, response, body) => {
       request(charUrl, (err, response, body) => {
         if (err) console.log(err);
 	else {
-            const parseCharData = JSON.parse(body);
-          console.log(parseCharData.name);
+          const parseCharData = JSON.parse(body);
+            console.log(parseCharData.name);
 	  }
       });
     });
