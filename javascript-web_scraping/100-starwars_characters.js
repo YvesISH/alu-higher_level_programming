@@ -16,7 +16,7 @@ request(filmsUrl, (error, response, body) => {
         else {
           const parseCharData = JSON.parse(body);
           console.log(parseCharData.name);
-	  }
+        }
       });
     });
   }
